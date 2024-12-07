@@ -33,10 +33,10 @@ public class Product {
 		this.price = price;
 	}
 
-	  @Override
-	    public String toString() {
-	        return name + ", " + String.format("%.2f", price);
-	    }
+	@Override
+	public String toString() {
+		return name + ", " + String.format("%.2f", price);
+	}
 
 	@Override
 	public int hashCode() {
@@ -55,12 +55,8 @@ public class Product {
 		return Objects.equals(name, other.name) && Objects.equals(price, other.price);
 	}
 
-	public static boolean staticProductPredicate(Product p) {//trabalha com argumento
-		return p.getPrice() >= 100;
-	}
-
-	public boolean nonStaticProductPredicate() {//nao usa argumento
-		return price >= 100;
+	public static void staticPriceUpdate(Product p) {
+		p.setPrice(p.getPrice() * 1.1);
 	}
 
 }
